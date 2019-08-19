@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: a1bbc2b9f8b5b41cfb1a5d0ced15f5bf
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Acherus Grotesque
+  fontNames:
+  - Acherus Grotesque
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 92df6a51026dc484b8b9cf186ff8455a, type: 3}
+  - {fileID: 12800000, guid: 7bf080033689242f49c8ab36aeac3523, type: 3}
+  - {fileID: 12800000, guid: 8cb8b9b46b3704cb1b321fe48acb712f, type: 3}
+  - {fileID: 12800000, guid: 2f12b21511aa74ed19525e355c2df84f, type: 3}
+  - {fileID: 12800000, guid: 9aaf5fb645cc246d0ba63f2b0b624870, type: 3}
+  - {fileID: 12800000, guid: 34f1643852f8e4d48ba380113ff87b2d, type: 3}
+  - {fileID: 12800000, guid: 4825ca893df1948459291631d22d67fa, type: 3}
+  - {fileID: 12800000, guid: 23c578fa5d4d8458e9caf95897378ab7, type: 3}
+  - {fileID: 12800000, guid: 672de2ebe7f844f0584d47bc47afd90d, type: 3}
+  - {fileID: 12800000, guid: 9d61071c3168a44eb97bed0b5818d9ae, type: 3}
+  - {fileID: 12800000, guid: 291acf5eba38448ef82bd05677c701aa, type: 3}
+  - {fileID: 12800000, guid: 9509ac7e673df49aba075d87cfa65b57, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
