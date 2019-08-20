@@ -178,6 +178,9 @@ public class SceneThreeController : MonoBehaviour
             videos[0].videoCanvas.SetActive(true);
             videoPlay = false;
             videoNum++;
+            sceneObjects[1].SetActive(false);
+            sceneObjects[2].SetActive(false);
+            sceneObjects[3].SetActive(false);
         }
 
         if(!videoPlay && videoNum == 1 && !videos[0].videoPlayer.isPlaying && videos[0].startPlaying)
@@ -203,7 +206,7 @@ public class SceneThreeController : MonoBehaviour
         if (audioNum == 2 && narratorAudio.time >= 36.77)
         {
             sceneObjects[11].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(-0.15f, 0.06f, -0.02f), new Vector3(69, 0, 0), 0.5f);
-            sceneObjects[11].GetComponent<SizeTransform>().SetDestination(new Vector2(0.24779f, 0.3f), 0.5f);
+            sceneObjects[11].GetComponent<SizeTransform>().SetDestination(new Vector2(0.20649f, 0.25f), 0.5f);
         }
 
         if (audioNum == 2 && narratorAudio.time >= 37.65)
@@ -215,8 +218,8 @@ public class SceneThreeController : MonoBehaviour
 
         if (audioNum == 3 && audioPlay && !narratorAudio.isPlaying)
         {
-            sceneObjects[12].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(0.15f, 0.06f, -0.02f), new Vector3(69, 0, 0), 0.5f);
-            sceneObjects[12].GetComponent<SizeTransform>().SetDestination(new Vector2(0.08866f, 0.2f), 0.5f);
+            sceneObjects[12].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(0.15f, 0.06f, -0.02f), new Vector3(69, 0, 0), 1.0f);
+            sceneObjects[12].GetComponent<SizeTransform>().SetDestination(new Vector2(0.08866f, 0.2f), 1.0f);
             sceneObjects[13].SetActive(false);
             narratorAudio.clip = Resources.Load<AudioClip>("Audio/Section3/" + audioFiles[3]);
             narratorAudio.Play();
@@ -242,45 +245,16 @@ public class SceneThreeController : MonoBehaviour
             videoNum++;
         }
 
-        if (videoPlay && videoNum == 2 && !videos[1].videoPlayer.isPlaying && videos[1].startPlaying)
+        if (videoPlay && videoNum != 9 && !videos[videoNum-1].videoPlayer.isPlaying && videos[videoNum-1].startPlaying)
         {
             SnippetPlayer(videoNum);
         }
-
-        if (videoPlay && videoNum == 3 && !videos[2].videoPlayer.isPlaying && videos[2].startPlaying)
-        {
-            SnippetPlayer(videoNum);
-        }
-
-        if (videoPlay && videoNum == 4 && !videos[3].videoPlayer.isPlaying && videos[3].startPlaying)
-        {
-            SnippetPlayer(videoNum);
-        }
-
-        if (videoPlay && videoNum == 5 && !videos[4].videoPlayer.isPlaying && videos[4].startPlaying)
-        {
-            SnippetPlayer(videoNum);
-        }
-
-        if (videoPlay && videoNum == 6 && !videos[5].videoPlayer.isPlaying && videos[5].startPlaying)
-        {
-            SnippetPlayer(videoNum);
-        }
-
-        if (videoPlay && videoNum == 7 && !videos[6].videoPlayer.isPlaying && videos[6].startPlaying)
-        {
-            SnippetPlayer(videoNum);
-        }
-
-        if (videoPlay && videoNum == 8 && !videos[7].videoPlayer.isPlaying && videos[7].startPlaying)
-        {
-            SnippetPlayer(videoNum);
-        }
-
+        
         if (videoPlay && videoNum == 9 && !videos[8].videoPlayer.isPlaying && videos[8].startPlaying)
         {
             videos[8].videoPlayer.enabled = false;
             videos[8].videoCanvas.SetActive(false);
+            sceneObjects[0].GetComponent<Scrapbook>().enabled = true;
         }
 
     }
@@ -289,6 +263,8 @@ public class SceneThreeController : MonoBehaviour
     {
         sceneStarted = true;
     }
+
+    
 
     private void SnippetPlayer(int video)
     {

@@ -167,6 +167,7 @@ public class SceneOneController : MonoBehaviour
         if (playVideo.videoPlayer.isPlaying && videoNum == 1 && playVideo.videoPlayer.time >= 77)
         {
             sceneObjects[3].SetActive(true);
+            sceneObjects[7].SetActive(true);
         }
 
         //Plantation markers disappear, cube showing user where to go appears
@@ -209,6 +210,7 @@ public class SceneOneController : MonoBehaviour
             sceneObjects[3].SetActive(false);
             sceneObjects[6].SetActive(false);
             sceneObjects[4].SetActive(true);
+            sceneObjects[8].SetActive(true);
             blocker = true;
             visionBlocker.SetActive(false);
             //visionBlock.FadeOut();
@@ -222,7 +224,9 @@ public class SceneOneController : MonoBehaviour
         if (playVideo.videoPlayer.isPlaying && videoNum == 2 && playVideo.videoPlayer.time >= 26)
         {
             sceneObjects[4].SetActive(false);
+            sceneObjects[8].SetActive(false);
             sceneObjects[5].SetActive(true);
+            sceneObjects[9].SetActive(true);
         }
 
         if (playVideo.videoPlayer.isPlaying && videoNum == 2 && playVideo.videoPlayer.time >= 38 && !sceneEnding)
@@ -236,6 +240,7 @@ public class SceneOneController : MonoBehaviour
         if(playVideo.videoPlayer.isPlaying && videoNum == 2 && playVideo.videoPlayer.time >= 38.5f && sceneEnding)
         {
             sceneObjects[5].SetActive(false);
+            sceneObjects[9].SetActive(false);
         }
 
         if(sceneEnding && Time.time - time >= 4.0f && visionBlocker.activeSelf)
