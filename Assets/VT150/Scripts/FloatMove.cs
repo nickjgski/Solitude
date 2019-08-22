@@ -25,14 +25,14 @@ public class FloatMove : MonoBehaviour
         transform.rotation = Quaternion.Lerp(startOrientation, targetOrientation, t);
     }
 
-    public void SetDestination(Vector3 destination, Vector3 orientation, float time)
+    public void SetDestination(Vector3 destination, Quaternion orientation, float time)
     {
         t = 0;
         startPosition = transform.position;
         startOrientation = transform.rotation;
         timeToReachTarget = time;
         targetPos = destination;
-        targetOrientation = Quaternion.Euler(orientation);
+        targetOrientation = orientation;
     }
 
 }

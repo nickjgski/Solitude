@@ -80,7 +80,8 @@ public class SceneThreeController : MonoBehaviour
 
         if (audioNum == 1 && narratorAudio.time >= 12.19f)
         {
-            sceneObjects[1].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(-0.15f, 0.092f, 0.075f), new Vector3(69, 0, 0), 0.5f);
+            sceneObjects[1].GetComponent<FloatMove>().SetDestination(book.transform.position + ((book.transform.right * -0.15f) + (book.transform.up * 0.092f) + (book.transform.forward * 0.075f)), 
+                Quaternion.Euler(book.transform.rotation.x+69, book.transform.rotation.y, book.transform.rotation.z), 0.5f);
             sceneObjects[1].GetComponent<SizeTransform>().SetDestination(new Vector2(0.125f, 0.125f), 0.5f);
         }
 
@@ -91,7 +92,8 @@ public class SceneThreeController : MonoBehaviour
 
         if (audioNum == 1 && narratorAudio.time >= 24.26f)
         {
-            sceneObjects[2].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(-0.15f, 0.03f, -0.08f), new Vector3(69, 0, 0), 0.5f);
+            sceneObjects[2].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(-0.15f, 0.03f, -0.08f), 
+                Quaternion.Euler(book.transform.rotation.x+69, book.transform.rotation.y, book.transform.rotation.z), 0.5f);
             sceneObjects[2].GetComponent<SizeTransform>().SetDestination(new Vector2(0.125f, 0.125f), 0.5f);
         }
 
@@ -162,7 +164,8 @@ public class SceneThreeController : MonoBehaviour
 
         if (audioNum == 1 && narratorAudio.time >= 69.20f)
         {
-            sceneObjects[3].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(0.15f, 0.06f, -0.02f), new Vector3(69, 0, 0), 0.5f);
+            sceneObjects[3].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(0.15f, 0.06f, -0.02f), 
+                Quaternion.Euler(book.transform.rotation.x+69, book.transform.rotation.y, book.transform.rotation.z), 0.5f);
             sceneObjects[3].GetComponent<SizeTransform>().SetDestination(new Vector2(0.1851435f, 0.3f), 0.5f);
         }
 
@@ -175,7 +178,6 @@ public class SceneThreeController : MonoBehaviour
         if(videoPlay && videoNum == 0 && !audioPlay)
         {
             videos[0].videoPlayer.enabled = true;
-            videos[0].videoCanvas.SetActive(true);
             videoPlay = false;
             videoNum++;
             sceneObjects[1].SetActive(false);
@@ -186,7 +188,6 @@ public class SceneThreeController : MonoBehaviour
         if(!videoPlay && videoNum == 1 && !videos[0].videoPlayer.isPlaying && videos[0].startPlaying)
         {
             videos[0].videoPlayer.enabled = false;
-            videos[0].videoCanvas.SetActive(false);
             audioPlay = true;
             audioNum++;
         }
@@ -205,7 +206,8 @@ public class SceneThreeController : MonoBehaviour
 
         if (audioNum == 2 && narratorAudio.time >= 36.77)
         {
-            sceneObjects[11].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(-0.15f, 0.06f, -0.02f), new Vector3(69, 0, 0), 0.5f);
+            sceneObjects[11].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(-0.15f, 0.06f, -0.02f), 
+                Quaternion.Euler(book.transform.rotation.x+69, book.transform.rotation.y, book.transform.rotation.z), 0.5f);
             sceneObjects[11].GetComponent<SizeTransform>().SetDestination(new Vector2(0.20649f, 0.25f), 0.5f);
         }
 
@@ -218,7 +220,8 @@ public class SceneThreeController : MonoBehaviour
 
         if (audioNum == 3 && audioPlay && !narratorAudio.isPlaying)
         {
-            sceneObjects[12].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(0.15f, 0.06f, -0.02f), new Vector3(69, 0, 0), 1.0f);
+            sceneObjects[12].GetComponent<FloatMove>().SetDestination(book.transform.position + new Vector3(0.15f, 0.06f, -0.02f), 
+                Quaternion.Euler(book.transform.rotation.x+69, book.transform.rotation.y, book.transform.rotation.z), 1.0f);
             sceneObjects[12].GetComponent<SizeTransform>().SetDestination(new Vector2(0.08866f, 0.2f), 1.0f);
             sceneObjects[13].SetActive(false);
             narratorAudio.clip = Resources.Load<AudioClip>("Audio/Section3/" + audioFiles[3]);
@@ -241,7 +244,6 @@ public class SceneThreeController : MonoBehaviour
         if (videoPlay && videoNum == 1 && !audioPlay)
         {
             videos[1].videoPlayer.enabled = true;
-            videos[1].videoCanvas.SetActive(true);
             videoNum++;
         }
 
@@ -253,7 +255,6 @@ public class SceneThreeController : MonoBehaviour
         if (videoPlay && videoNum == 9 && !videos[8].videoPlayer.isPlaying && videos[8].startPlaying)
         {
             videos[8].videoPlayer.enabled = false;
-            videos[8].videoCanvas.SetActive(false);
             sceneObjects[0].GetComponent<Scrapbook>().enabled = true;
         }
 

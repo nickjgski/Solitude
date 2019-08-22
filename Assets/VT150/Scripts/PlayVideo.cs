@@ -97,6 +97,7 @@ public class PlayVideo : MonoBehaviour, IActivatable
 
         startPlaying = true;
 
+        videoCanvas.SetActive(true);
         //Debug.Log("Playing Video");
         while (videoPlayer.isPlaying)
         {
@@ -107,6 +108,7 @@ public class PlayVideo : MonoBehaviour, IActivatable
         startPlaying = false;
         //Debug.Log("startPlaying = " + startPlaying);
         videoPlayer.Stop();
+        videoCanvas.SetActive(false);
         //Debug.Log("Done Playing Video");
     }
 
