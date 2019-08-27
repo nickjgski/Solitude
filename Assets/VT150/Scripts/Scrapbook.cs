@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * This script is to handle the behavior of any scrapbook. In its
+ * current implementation the touchpad is used to control flipping
+ * through and clicking on images to enlarge them is not supported.
+ * The planned implementation is to use swipe gestures to select each
+ * image and when reaching the end of a page it would flip to the next.
+ */
 public class Scrapbook : MonoBehaviour
 {
 
@@ -29,17 +37,19 @@ public class Scrapbook : MonoBehaviour
 
     private void Update()
     {
-        
+        //Checking for click towards the left
         if(controller.GetButtonDown(GvrControllerButton.TouchPadButton) && controller.TouchPos.x < 0)
         {
             BackPage();
         }
+        //Checking for click towards the right
         if (controller.GetButtonDown(GvrControllerButton.TouchPadButton) && controller.TouchPos.x > 0)
         {
             ForwardPage();
         }
         
-        /*
+        /* This will correctly check if a swipe is occurring. Sensitivity 
+         * most likely needs adjustment
         distance = lastTouchPos - controller.TouchPos;
         if (distance.magnitude >= 0.1)
         {
@@ -60,6 +70,8 @@ public class Scrapbook : MonoBehaviour
         }
     }
 
+    //Currently hard coded to section 3 and will not lower the other objects. Changing height was also not very obviously
+    //visible so should be changed to outline or highlight in some other way
     private void ShowSelect(int selection)
     {
         switch(selection)
@@ -84,6 +96,7 @@ public class Scrapbook : MonoBehaviour
         }
     }
 
+    //To be used with swipe to select images
     private void Back()
     {
         if (selected != 0)
@@ -98,6 +111,7 @@ public class Scrapbook : MonoBehaviour
 
     }
 
+    //Goes back one page
     private void BackPage()
     {
         if (pageNum != 0)
@@ -114,6 +128,7 @@ public class Scrapbook : MonoBehaviour
         }
     }
 
+    //To be used with swipe to select images
     private void Forward()
     {
         if (selected != 4)
@@ -128,6 +143,7 @@ public class Scrapbook : MonoBehaviour
 
     }
 
+    //Goes forward one page
     private void ForwardPage()
     {
         if (pageNum != numPages - 1)

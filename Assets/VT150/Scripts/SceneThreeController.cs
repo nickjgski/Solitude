@@ -3,35 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * This script handles the timing of everything in the section 3 scene.
+ * The update function includes lots of checks that just look for the correct audio/video
+ * file to be playing and manipulate GameObjects to appear and move as necessary.
+ * It is helpful to read this and the script side by side to identify what checks are for
+ * which events.
+ */
 public class SceneThreeController : MonoBehaviour
 {
 
+    //Overlay to place user
     public GameObject overlay;
 
+    //Represents the user
     public GameObject player;
 
+    //The book that images float into
     public GameObject book;
 
+    //The script that controls the overlay image
     public ImageOverlay imageOverlay;
 
+    //Any objects in the scene that need to appear and be manipulated
     public List<GameObject> sceneObjects;
 
+    //Where audio files are played from
     public AudioSource narratorAudio;
 
+    //The names of audio files
     public List<String> audioFiles;
 
+    //The videos being played during this scne
     public List<PlayVideo> videos;
 
+    //Checks if the user has selected to start
     private bool sceneStarted;
 
+    //Checks if the user has placed the image
     private bool placed;
 
+    //True if audio should be playing currently
     private bool audioPlay;
 
+    //True if video should be playing currently
     private bool videoPlay;
 
+    //The audio file that should be playing or will play next
     private int audioNum;
 
+    //The video file that should be playing or will play next
     private int videoNum;
 
     // Start is called before the first frame update

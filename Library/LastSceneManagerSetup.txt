@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/VT150/Scenes/SectionThree.unity
+- path: Assets/VT150/Scenes/SectionOne.unity
   isLoaded: 1
   isActive: 1

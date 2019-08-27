@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * This script allows for smoothly changing the location and orientation
+ * of an object over a certain amount of time by specifying the destination
+ * orientation, and how much time it should take. Other classes should call
+ * SetDestination for this behavior.
+ */
 public class FloatMove : MonoBehaviour
 {
 
